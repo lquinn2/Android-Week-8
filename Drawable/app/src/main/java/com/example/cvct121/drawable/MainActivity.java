@@ -32,29 +32,29 @@ public class MainActivity extends AppCompatActivity {
         res = getResources();
         list = new LevelListDrawable();
         list.setLevel(currentBatteryLevel);
-        list.addLevel(0,0, res.getDrawable(R.drawable.ic_battery_20));
-        list.addLevel(1,1, res.getDrawable(R.drawable.ic_battery_30));
-        list.addLevel(2,2, res.getDrawable(R.drawable.ic_battery_50));
-        list.addLevel(3,3, res.getDrawable(R.drawable.ic_battery_60));
-        list.addLevel(4,4, res.getDrawable(R.drawable.ic_battery_80));
-        list.addLevel(5,5, res.getDrawable(R.drawable.ic_battery_90));
-        list.addLevel(6,6, res.getDrawable(R.drawable.ic_battery_100));
+        list.addLevel(0,0, res.getDrawable(R.drawable.ic_battery_20v));
+        list.addLevel(1,1, res.getDrawable(R.drawable.ic_battery_30v));
+        list.addLevel(2,2, res.getDrawable(R.drawable.ic_battery_50v));
+        list.addLevel(3,3, res.getDrawable(R.drawable.ic_battery_60v));
+        list.addLevel(4,4, res.getDrawable(R.drawable.ic_battery_80v));
+        list.addLevel(5,5, res.getDrawable(R.drawable.ic_battery_90v));
+        list.addLevel(6,6, res.getDrawable(R.drawable.ic_battery_100v));
 
         battery.setImageDrawable(list);
     }
 
     public void decreaseBatteryLife(View view) {
         // Decrease battery life
-        if (currentBatteryLevel >= 0){
+        if (currentBatteryLevel > 0){
             currentBatteryLevel--;
             battery.setImageLevel(currentBatteryLevel);
-            Log.d("TAG", "increaseBatteryLife: " + currentBatteryLevel);
+            Log.d("TAG", "decreaseBatteryLife: " + currentBatteryLevel);
         }
     }
 
     public void increaseBatteryLife(View view) {
         // Increase battery life
-        if (currentBatteryLevel <= 6){
+        if (currentBatteryLevel < 6){
             currentBatteryLevel++;
             battery.setImageLevel(currentBatteryLevel);
             Log.d("TAG", "increaseBatteryLife: " + currentBatteryLevel);

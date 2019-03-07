@@ -1,4 +1,0 @@
-#Wed Mar 06 11:42:44 PST 2019
-base.0=C\:\\Users\\CVCT121\\AndroidStudioProjects\\Scorekeeper\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\4
-path.0=classes.dex
-renamed.0=classes.dex

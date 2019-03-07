@@ -9,6 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.StyleSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Menu;
@@ -41,9 +44,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Put initial data into the word list.
-        for (int i = 0; i < 20; i++) {
-            mWordList.addLast("Word " + i);
-        }
+
+        mWordList.addLast("Kale and Lemon Sandwiches \n" +
+                "This sandwich is stunnningly delicious and tates as good as it is healthy. " +
+                "Any greens of choice will work." +
+                "The lemon adds an almost sweet taste. Be generous with it!");
+        mWordList.addLast("Mango-Lime Bean Salad \n" +
+                "Everyone loves this, so double or even triple the recipe! It vanishes in a flash, " +
+                "and also works well as a salsa. It really is our all-time favorite summer salad.");
+        mWordList.addLast("Lime Mousse \n" +
+                "This is fabulous alone, topeed with fruit of any kind or as a frosting on cake. " +
+                "It is fast to make at the last minute. Use more or less lime according to taste.");
+
 
         mRecyclerView = findViewById(R.id.recyclerview);
         mAdapter = new WordListAdapter(this, mWordList);
